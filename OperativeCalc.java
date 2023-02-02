@@ -346,6 +346,7 @@ class MyStreamPanel extends JPanel implements ActionListener{
 				bStream.setText(bStream.getText()+stringOfButton);
 				
 			}
+			//testing change git
 			
 		}
 		
