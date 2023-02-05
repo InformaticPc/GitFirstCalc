@@ -1,5 +1,5 @@
 
-
+// VScode branch
 import java.awt.*;
 
 import java.awt.event.ActionEvent;
@@ -8,14 +8,14 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
+	
 
 public class OperativeCalc extends JFrame {
 	public OperativeCalc() {
 		setTitle("FlowLayouts");
 		setBounds(500, 500, 500, 300);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+		
 		MyStreamPanel topPanel = new MyStreamPanel();
 		add(topPanel);
 		setVisible(true);
