@@ -50,6 +50,7 @@ class MyStreamPanel extends JPanel implements ActionListener{
 		add(panelGrid, BorderLayout.CENTER);
 		
 		
+		addButton("C");
 		addButton("1");
 		addButton("2");
 		addButton("3");
@@ -85,25 +86,7 @@ class MyStreamPanel extends JPanel implements ActionListener{
 		*/
 	}
 	
-	private Character isSimbol(char simbol) {
-		switch (simbol) {
-		case '+':
-			return simbol;
-			
-		case '*':
-			return simbol;
-			
-		case '=':
-			return simbol;
-		case '-':
-			return simbol;
-		case '/':
-			return simbol;
-
-		default:
-			return (Character) null;
-		}
-	}
+	
 	
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -114,7 +97,11 @@ class MyStreamPanel extends JPanel implements ActionListener{
 		
 		if(start) {
 			if(operator != null) {
-				System.out.println("first press a number");
+				if (operator=='C') {
+					resetAll();
+				}else{
+					System.out.println("first press a number");
+				}
 			}else {
 				bStream.setText(stringOfButton);
 				start=false;
@@ -128,6 +115,9 @@ class MyStreamPanel extends JPanel implements ActionListener{
 				String stringOperator=operator.toString();//use for show the operator in setText
 				
 				switch ((char)operator) {
+				case 'C':
+					resetAll();
+				break;
 				case '+':
 					
 					if(!sum) {//condition true only for the first time of calculation or after '=' simbol
@@ -318,7 +308,7 @@ class MyStreamPanel extends JPanel implements ActionListener{
 						bResult.setText("Result");
 						bStream.setText(String.valueOf(n1));
 					}
-					else //substract
+					else if(substract)//substract
 					{
 						n2= Long.parseLong(bStream.getText());
 						n1-=n2;
@@ -326,13 +316,7 @@ class MyStreamPanel extends JPanel implements ActionListener{
 						bStream.setText(String.valueOf(n1));
 					}
 					//reset everything
-					n1=0;
-					n2=0;
-					times=false;
-					substract=false;
-					div=false;
-					sum=false;
-					start=true;
+					resetAll();
 					break;
 
 				default:
@@ -346,5 +330,40 @@ class MyStreamPanel extends JPanel implements ActionListener{
 			
 		}
 		
+	}
+	//method reset
+	private void resetAll() {
+		n1=0;
+		n2=0;
+		times=false;
+		substract=false;
+		div=false;
+		sum=false;
+		start=true;
+		bStream.setText("0");
+		bResult.setText("0");
+	}
+	//return check for simbol
+	private Character isSimbol(char simbol) {
+		switch (simbol) {
+		case '+':
+			return simbol;
+			
+		case '*':
+			return simbol;
+			
+		case '=':
+			return simbol;
+		case '-':
+			return simbol;
+		case '/':
+		return simbol;
+
+		case 'C':
+		return simbol;
+
+		default:
+			return (Character) null;
+		}
 	}
 }
