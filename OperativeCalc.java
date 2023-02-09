@@ -1,34 +1,19 @@
-<<<<<<< HEAD
-package ejer.primeraCalculadora;
-
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
-=======
-
-
+// VScode branch
 import java.awt.*;
 
->>>>>>> 13f2574 (VScode Begining)
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-<<<<<<< HEAD
-import javax.swing.JTextArea;
-=======
-
->>>>>>> 13f2574 (VScode Begining)
 
 public class OperativeCalc extends JFrame {
 	public OperativeCalc() {
 		setTitle("FlowLayouts");
 		setBounds(500, 500, 500, 300);
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
-
+		
 		MyStreamPanel topPanel = new MyStreamPanel();
 		add(topPanel);
 		setVisible(true);
@@ -44,11 +29,7 @@ class MyStreamPanel extends JPanel implements ActionListener{
 	
 	private long n1=0;
 	private long n2=0;
-<<<<<<< HEAD
-	private long result=0;
-=======
-	//private long result=0; sabe the last result
->>>>>>> 13f2574 (VScode Begining)
+	private long result=0;//save the last result
 	private boolean sum=false;//to know when make the sum
 	private boolean times=false;//to know when make the multiplication
 	private boolean div=false;//to know when make the multiplication
