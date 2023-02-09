@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 package ejer.primeraCalculadora;
+=======
+
+>>>>>>> 13f2574 (VScode Begining)
 
 public class MainCalc {
 
